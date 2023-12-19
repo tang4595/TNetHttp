@@ -52,16 +52,14 @@ public class ApiProvider<T: TargetType>: MoyaProvider<T> {
         cancelTokens.forEach { $0.cancel() }
     }
     
-    public convenience init(
-        endpointClosure: @escaping MoyaProvider<T>.EndpointClosure = MoyaProvider.defaultEndpointMapping,
-        requestClosure: @escaping MoyaProvider<T>.RequestClosure = MoyaProvider<T>.defaultRequestMapping,
-        stubClosure: @escaping MoyaProvider<T>.StubClosure = MoyaProvider.neverStub,
-        callbackQueue: DispatchQueue? = nil,
-        session: Session = sessionManager,
-        plugins: [PluginType] = [],
-        trackInflights: Bool = false,
-        netKeys: TNetKeys
-    ) {
+    public convenience init(endpointClosure: @escaping MoyaProvider<T>.EndpointClosure = MoyaProvider.defaultEndpointMapping,
+                            requestClosure: @escaping MoyaProvider<T>.RequestClosure = MoyaProvider<T>.defaultRequestMapping,
+                            stubClosure: @escaping MoyaProvider<T>.StubClosure = MoyaProvider.neverStub,
+                            callbackQueue: DispatchQueue? = nil,
+                            session: Session = sessionManager,
+                            plugins: [PluginType] = [],
+                            trackInflights: Bool = false,
+                            netKeys: TNetKeys) {
         /// Customizing plugins.
         var newPlugins = plugins
         /// Plugin - Credentials.
@@ -104,22 +102,20 @@ public class ApiProvider<T: TargetType>: MoyaProvider<T> {
         }
         
         self.init(endpointClosure: endpointClosure,
-                   requestClosure: requestClosure,
-                   stubClosure: stubClosure,
-                   callbackQueue: callbackQueue,
-                   session: session,
-                   plugins: newPlugins,
-                   trackInflights: trackInflights)
+                  requestClosure: requestClosure,
+                  stubClosure: stubClosure,
+                  callbackQueue: callbackQueue,
+                  session: session,
+                  plugins: newPlugins,
+                  trackInflights: trackInflights)
         self.netKeys = netKeys
     }
     
-    public func request(
-        _ target: T,
-        showError: Bool = true,
-        whitelistOfErrorCode: [Int] = [],
-        callbackQueue: DispatchQueue? = .none,
-        progress: ProgressBlock? = .none
-    ) -> Observable<JSON> {
+    public func request(_ target: T,
+                        showError: Bool = true,
+                        whitelistOfErrorCode: [Int] = [],
+                        callbackQueue: DispatchQueue? = .none,
+                        progress: ProgressBlock? = .none) -> Observable<JSON> {
         guard let netKeys = netKeys else {
             return .just([:])
         }
@@ -172,12 +168,10 @@ public class ApiProvider<T: TargetType>: MoyaProvider<T> {
                 }
             }
             
-            let cancelToken = self.request(
-                target,
-                callbackQueue: callbackQueue,
-                progress: progress,
-                completion: completion)
-            
+            let cancelToken = self.request(target,
+                                           callbackQueue: callbackQueue,
+                                           progress: progress,
+                                           completion: completion)
             self.cancelTokens.append(cancelToken)
             return Disposables.create()
         }
