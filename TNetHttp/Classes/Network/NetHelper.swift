@@ -10,7 +10,6 @@ import Moya
 import FCUUID
 import RxSwift
 import RxCocoa
-import SwifterSwift
 import SwiftyJSON
 import TUtilExt
 import TAppBase

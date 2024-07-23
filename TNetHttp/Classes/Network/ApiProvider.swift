@@ -12,7 +12,6 @@ import SwiftyJSON
 import RxSwift
 import TAppBase
 import TUtilExt
-import SwifterSwift
 
 // TODO: 缓存
 public let sessionManager: Alamofire.Session = {
