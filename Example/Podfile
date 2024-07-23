@@ -1,0 +1,13 @@
+use_frameworks!
+inhibit_all_warnings!
+platform :ios, '13.0'
+
+target 'Example' do
+  #specs
+  pod 'TNetHttp', :path => '../'
+  pod 'TAppBase', :git => 'https://github.com/tang4595/TAppBase.git'
+  pod 'TUtilExt', :git => 'https://github.com/tang4595/TUtilExt.git'
+
+  #debug
+#  pod 'LookinServer', :configurations => ['Debug']
+end

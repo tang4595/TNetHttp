@@ -1,0 +1,56 @@
+{
+  "name": "TNetHttp",
+  "version": "0.0.1",
+  "summary": "TNetHttp.",
+  "description": "TNetHttp.",
+  "homepage": "https://www.apple.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tang": "tang@apple.com"
+  },
+  "source": {
+    "git": "https://github.com/tang4595/",
+    "tag": "0.0.1"
+  },
+  "source_files": "TNetHttp/Classes/**/*",
+  "resource_bundles": {
+    "TNetHttpResource": [
+      "TNetHttp/Assets/*.{xcassets,json,plist}"
+    ]
+  },
+  "dependencies": {
+    "SwiftyJSON": [
+
+    ],
+    "RxSwift": [
+
+    ],
+    "CryptoSwift": [
+
+    ],
+    "FCUUID": [
+
+    ],
+    "RxAlamofire": [
+      "~> 6.1.1"
+    ],
+    "Moya": [
+      "~> 14.0.0"
+    ],
+    "TAppBase": [
+
+    ],
+    "TUtilExt": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "pod_target_xcconfig": {
+    "c": "-Owholemodule"
+  }
+}

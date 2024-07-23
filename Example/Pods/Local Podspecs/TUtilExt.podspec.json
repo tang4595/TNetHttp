@@ -1,0 +1,56 @@
+{
+  "name": "TUtilExt",
+  "version": "0.0.1",
+  "summary": "TUtilExt.",
+  "description": "TUtilExt.",
+  "homepage": "https://www.apple.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tang": "tang@apple.com"
+  },
+  "source": {
+    "git": "https://github.com/tang4595/",
+    "tag": "0.0.1"
+  },
+  "source_files": "TUtilExt/Classes/**/*",
+  "resource_bundles": {
+    "TUtilExtResource": [
+      "TUtilExt/Assets/*.{xcassets,json,plist}"
+    ]
+  },
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "CryptoSwift": [
+
+    ],
+    "RxSwift": [
+
+    ],
+    "RxCocoa": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "TPKeyboardAvoiding": [
+
+    ],
+    "RTRootNavigationController": [
+
+    ],
+    "TAppBase": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "pod_target_xcconfig": {
+    "c": "-Owholemodule"
+  }
+}
