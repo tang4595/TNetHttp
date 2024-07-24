@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.dependency 'TAppBase'
   s.dependency 'TUtilExt'
 
-  s.platform = :ios, "12.0"
+  s.platform = :ios, "13.0"
   s.pod_target_xcconfig = { 'c' => '-Owholemodule' }
 end
 
